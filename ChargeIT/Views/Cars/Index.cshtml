@@ -1,0 +1,55 @@
+﻿@model List<CarViewModel> 
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<div>
+    <h3 class="page-title">Available cars.</h3>
+
+    <div class="card">
+        <div class="card-body">
+            <a class="add-item" onclick="openModal('Cars', 'GetAddCarModal')">
+                <img class="card-image" src="assets/add_item.png">
+            </a>
+        </div>
+    </div>
+
+    @foreach (var car in Model) {
+        <div class="card">
+            <div class="card-body">
+                <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYPHmcJcGH46-yDKw1oIna6CqPczD2O_OA&usqp=CAU" alt="Card image cap">
+                <h5 class="card-title">
+                    @car.PlateNumber
+                    @* <a type="button" class="btn btn-danger add-button action" *@
+                    @*    asp-controller="Cars" *@
+                    @*    asp-action="DeleteCar" *@
+                    @*    asp-route-id="@car.Id"> *@
+                    @*     <i class="fa-solid fa-circle-xmark"></i> *@
+                    @* </a> *@
+                    @* <a type="button" class="btn btn-danger add-button action" *@
+                    @*    asp-controller="ChargeMachines" *@
+                    @*    asp-action="EditStation" *@
+                    @*    asp-route-id="@chargeMachine.Id"> *@
+                    @*     <i class="fa-solid fa-file-pen"></i> *@
+                    @* </a> *@
+                    @* <a type="button" class="btn btn-primary add-button action" *@
+                    @*    asp-controller="Cars" *@
+                    @*    asp-action="DetailsCar" *@
+                    @*    asp-route-id="@car.Id"> *@
+                    @*     <i class="fa-solid fa-circle-info"></i> *@
+                    @* </a> *@
+                </h5>
+                <p class="card-text"> s </p>
+            </div>
+        </div>
+    }
+
+    <partial name="_ModalPartial"/>
+</div>
+</body>
+</html>

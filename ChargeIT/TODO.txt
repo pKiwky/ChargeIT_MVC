@@ -1,0 +1,23 @@
+﻿* Create Cars tab in the navigation bar
+* Get and show the available cars from the system
+* Add the functionality to create a new car 
+
+* Title for each page
+* Edit/Details/Delete Car
+
+Adaugati cateva date in tabelul de bookings 
+Modificati pagina de Charge Machine details sa afiseze si lista de bookinguri facute pentru charge machine-ul respectiv
+Modificati pagina de Car details sa afiseze si lista de bookinguri facute pentru car-ul respectiv
+
+- New item in navbar for car owners
+- New page for car owners (get/add/edit/remove/details with all his cars)
+- Display car owner on cars overview page
+- Extend add/edit cars functionalitaties to select the a car owner
+- Display car owner on details page of a car
+- Delete booking functionality from both car and charge machine details page if the booking is active 
+- Sort/filter/search for all the tables
+
+Asa cum am precizat la sesiunea de astazi, ne-am dori sa avem functionalitatea de maps si pe station details page si/sau create bookings page
+Pentru station details page harta va trebui sa stea centrata pe coordonatele charge machine-ului si markerul sa fie afisat cu coordonatele charge machineului
+Pentru bookings, cand utilizatorul selecteaza un charge machine, ar trebui afisat pe harta respectivul charge machine, posibil sa fiti nevoiti sa faceti cumva clear la markerul existent, inainte de a adauga altul.
+In final, poate reusiti sa rezolvati problema ramasa de la sesiunea de azi cu contul de gmail sau puteti incerca cu o adresa de yahoo, poate aceasta va merge fara probleme. O sa incercam si noi sa ii dam de cap sa venim cu o solutie pana data viitoare
