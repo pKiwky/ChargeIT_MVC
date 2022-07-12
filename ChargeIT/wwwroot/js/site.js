@@ -37,11 +37,11 @@ function sendPostRequest(controller, page) {
 
             if (error != null) {
                 toastr.error(error);
-            } else {
-                if (message != null) {
-                    localStorage.setItem("message", message);
-                    toastr.success(message);
-                }
+            } 
+            // Presupunand ca orice request executat cu succes contine 'message'.
+            else if (message != null) {
+                localStorage.setItem("message", message);
+                toastr.success(message);
 
                 location.reload();
                 return;
