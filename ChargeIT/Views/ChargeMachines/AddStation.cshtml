@@ -1,6 +1,8 @@
 ﻿@model ChargeMachineViewModel
 
 <div class="modal-content">
+    <h5 class="modal-title">Add new station.</h5>
+
     <form method="POST">
         <div class="form-group">
             <label asp-for="City" class="form-label">City</label>
@@ -29,8 +31,8 @@
         </div>
 
         <button
-            onclick="sendRequest('ChargeMachines', 'AddStation')"
             type="button"
+            onclick="sendPostRequest('ChargeMachines', 'AddStation')"
             class="btn btn-success action-station-button">
             Save
         </button>

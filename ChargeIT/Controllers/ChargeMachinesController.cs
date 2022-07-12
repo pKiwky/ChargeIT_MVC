@@ -53,7 +53,9 @@ namespace ChargeIT.Controllers {
             );
             _applicationDbContext.SaveChanges();
 
-            return Json(new { success = true });
+            return Json(new {
+                message = "The station was successfully added.",
+            });
         }
 
         [HttpGet]
@@ -85,19 +87,68 @@ namespace ChargeIT.Controllers {
             var chargeMachineEntity = _applicationDbContext.ChargeMachines
                 .FirstOrDefault(cm => cm.Id == chargeMachineViewModel.Id && cm.IsDeleted == false);
 
-            if (chargeMachineEntity != null) {
-                chargeMachineEntity.City = chargeMachineViewModel.City;
-                chargeMachineEntity.Latitude = chargeMachineViewModel.Latitude.Value;
-                chargeMachineEntity.Longitude = chargeMachineViewModel.Longitude.Value;
-                chargeMachineEntity.Number = chargeMachineViewModel.Number;
-                chargeMachineEntity.Street = chargeMachineViewModel.Street;
-
-                _applicationDbContext.ChargeMachines.Update(chargeMachineEntity);
-                _applicationDbContext.SaveChanges();
+            if (chargeMachineEntity == null) {
+                return Json(new {
+                    error = "This station it is not valid."
+                });
             }
 
-            return Json(new { success = true });
+            chargeMachineEntity.City = chargeMachineViewModel.City;
+            chargeMachineEntity.Latitude = chargeMachineViewModel.Latitude.Value;
+            chargeMachineEntity.Longitude = chargeMachineViewModel.Longitude.Value;
+            chargeMachineEntity.Number = chargeMachineViewModel.Number;
+            chargeMachineEntity.Street = chargeMachineViewModel.Street;
+
+            _applicationDbContext.ChargeMachines.Update(chargeMachineEntity);
+            _applicationDbContext.SaveChanges();
+
+            return Json(new {
+                message = "The station was successfully edited.",
+            });
         }
+
+        [HttpDelete]
+        public IActionResult DeleteStation(int id) {
+            var chargeMachineEntity = _applicationDbContext.ChargeMachines
+                .FirstOrDefault(cm => cm.Id == id && cm.IsDeleted == false);
+
+            if (chargeMachineEntity == null) {
+                return Json(new {
+                    error = "This station was already deleted.",
+                });
+            }
+
+            _applicationDbContext.ChargeMachines.Remove(chargeMachineEntity);
+            _applicationDbContext.SaveChanges();
+
+            return Json(new {
+                message = "The station was successfully deleted.",
+            });
+            return RedirectToAction("Index", "ChargeMachines");
+        }
+
+        [HttpGet]
+        public IActionResult DetailsStation(int id) {
+            var chargeMachineEntity = _applicationDbContext.ChargeMachines
+                .FirstOrDefault(cm => cm.Id == id && cm.IsDeleted == false);
+
+            if (chargeMachineEntity == null) {
+                return Json(new {
+                    error = "This station it is not valid."
+                });
+            }
+
+            return PartialView("DetailsStation", new ChargeMachineViewModel() {
+                Id = chargeMachineEntity.Id,
+                Code = chargeMachineEntity.Code,
+                City = chargeMachineEntity.City,
+                Latitude = chargeMachineEntity.Latitude,
+                Longitude = chargeMachineEntity.Longitude,
+                Number = chargeMachineEntity.Number,
+                Street = chargeMachineEntity.Street
+            });
+        }
+
     }
 
 }

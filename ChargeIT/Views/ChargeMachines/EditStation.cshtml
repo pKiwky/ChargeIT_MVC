@@ -1,6 +1,8 @@
 ﻿@model ChargeMachineViewModel
 
 <div class="modal-content">
+    <h5 class="modal-title">Edit station.</h5>
+
     <form method="POST">
         <div class="form-group">
             <input type="text" class="form-control form-input" asp-for="Id" hidden required>
@@ -32,8 +34,8 @@
         </div>
 
         <button
-            onclick="sendRequest('ChargeMachines', 'EditStation')"
             type="button"
+            onclick="sendPostRequest('ChargeMachines', 'EditStation')"
             class="btn btn-success action-station-button">
             Save
         </button>

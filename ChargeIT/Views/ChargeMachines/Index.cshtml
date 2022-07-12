@@ -25,9 +25,7 @@
                 <h5 class="card-title">
                     @chargeMachine.City, @chargeMachine.Street @(chargeMachine.Number != 0 ? @chargeMachine.Number : "")
                     <a type="button" class="btn btn-danger add-button action"
-                       asp-controller="ChargeMachines"
-                       asp-action=""
-                       asp-route-id="@chargeMachine.Id">
+                       onclick="sendDeleteRequest('ChargeMachines', 'DeleteStation', { id: @chargeMachine.Id })">
                         <i class="fa-solid fa-circle-xmark"></i>
                     </a>
                     <a type="button" class="btn btn-danger add-button action"
@@ -35,9 +33,7 @@
                         <i class="fa-solid fa-file-pen"></i>
                     </a>
                     <a type="button" class="btn btn-danger add-button action"
-                       asp-controller="ChargeMachines"
-                       asp-action=""
-                       asp-route-id="@chargeMachine.Id">
+                       onclick="openModal('ChargeMachines', 'DetailsStation', { id: @chargeMachine.Id })">
                         <i class="fa-solid fa-circle-info"></i>
                     </a>
                 </h5>

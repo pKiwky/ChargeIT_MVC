@@ -57,6 +57,10 @@ body {
     opacity: 0.75;
 }
 
+.modal-title {
+    margin-bottom: 10px;
+}
+
 .modal-content {
     padding: 20px;
 }
