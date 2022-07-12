@@ -1,0 +1,52 @@
+﻿@model List<ChargeMachineViewModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <h3 class="page-title">Available charging stations</h3>
+
+    <div class="card">
+        <div class="card-body">
+            <a class="add-item" onclick="openModal('ChargeMachines', 'GetAddStationModal')">
+                <img class="card-image" src="assets/add_item.png">
+            </a>
+        </div>
+    </div>
+
+    @foreach (var chargeMachine in Model) {
+        <div class="card">
+            <div class="card-body">
+                <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYPHmcJcGH46-yDKw1oIna6CqPczD2O_OA&usqp=CAU">
+                <h5 class="card-title">
+                    @chargeMachine.City, @chargeMachine.Street @(chargeMachine.Number != 0 ? @chargeMachine.Number : "")
+                    <a type="button" class="btn btn-danger add-button action"
+                       asp-controller="ChargeMachines"
+                       asp-action=""
+                       asp-route-id="@chargeMachine.Id">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </a>
+                    <a type="button" class="btn btn-danger add-button action"
+                       onclick="openModal('ChargeMachines', 'GetEditStationModal', { id: @chargeMachine.Id })">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </a>
+                    <a type="button" class="btn btn-danger add-button action"
+                       asp-controller="ChargeMachines"
+                       asp-action=""
+                       asp-route-id="@chargeMachine.Id">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </a>
+                </h5>
+                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+        </div>
+    }
+
+    <partial name="_ModalPartial"/>
+</div>
+</body>
+</html>

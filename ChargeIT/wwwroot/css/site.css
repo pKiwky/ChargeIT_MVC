@@ -1,0 +1,77 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.page-title {
+    margin-bottom: 25px;
+}
+
+.card:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.card .add-item {
+    border: none;
+    background-color: transparent;
+}
+
+.card .add-item img:hover {
+    opacity: 0.90;
+}
+
+.card .card-image {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+.card .action {
+    position: relative;
+    top: -5px;
+    right: -5px;
+    background-color: transparent;
+    color: #363a36;
+    font-size: 15px;
+    border: none;
+    float: right;
+    padding: 0 5px 0 5px;
+}
+
+.card .action:hover {
+    opacity: 0.75;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-content form > button {
+    margin-top: 15px;
+    width: 100px;
+    float: right;
+}
+
+.form-label {
+    margin-bottom: 1px;
+}
+
+.form-input {
+    padding: 7.5px;
+    margin-bottom: 7.5px;
+}
