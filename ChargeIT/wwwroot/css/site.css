@@ -45,6 +45,9 @@ body {
     position: relative;
     top: -5px;
     right: -5px;
+}
+
+.action {
     background-color: transparent;
     color: #363a36;
     font-size: 15px;
@@ -53,7 +56,8 @@ body {
     padding: 0 5px 0 5px;
 }
 
-.card .action:hover {
+.action:hover {
+    background-color: indianred;
     opacity: 0.75;
 }
 

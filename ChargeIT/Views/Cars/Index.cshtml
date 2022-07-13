@@ -19,32 +19,26 @@
         </div>
     </div>
 
-    @foreach (var car in Model) {
+    @foreach (var car in Model){
         <div class="card">
             <div class="card-body">
-                <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYPHmcJcGH46-yDKw1oIna6CqPczD2O_OA&usqp=CAU" alt="Card image cap">
+                <img class="card-image" src="https://previews.123rf.com/images/ylivdesign/ylivdesign1608/ylivdesign160801337/61153667-red-car-icon-in-flat-style-isolated-on-white-background.jpg" alt="Card image cap">
                 <h5 class="card-title">
                     @car.PlateNumber
-                    @* <a type="button" class="btn btn-danger add-button action" *@
-                    @*    asp-controller="Cars" *@
-                    @*    asp-action="DeleteCar" *@
-                    @*    asp-route-id="@car.Id"> *@
-                    @*     <i class="fa-solid fa-circle-xmark"></i> *@
-                    @* </a> *@
-                    @* <a type="button" class="btn btn-danger add-button action" *@
-                    @*    asp-controller="ChargeMachines" *@
-                    @*    asp-action="EditStation" *@
-                    @*    asp-route-id="@chargeMachine.Id"> *@
-                    @*     <i class="fa-solid fa-file-pen"></i> *@
-                    @* </a> *@
-                    @* <a type="button" class="btn btn-primary add-button action" *@
-                    @*    asp-controller="Cars" *@
-                    @*    asp-action="DetailsCar" *@
-                    @*    asp-route-id="@car.Id"> *@
-                    @*     <i class="fa-solid fa-circle-info"></i> *@
-                    @* </a> *@
+                    <button type="button" class="btn btn-danger add-button action"
+                       onclick="sendDeleteRequest('Cars', 'DeleteCar', { id: @car.Id })">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger add-button action"
+                            onclick="openModal('Cars', 'GetEditCarModal', { id: @car.Id })">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger add-button action"
+                            onclick="openModal('Cars', 'CarDetails', { id: @car.Id })">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
                 </h5>
-                <p class="card-text"> s </p>
+                @* <p class="card-text"></p> *@
             </div>
         </div>
     }

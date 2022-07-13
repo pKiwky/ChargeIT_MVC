@@ -124,7 +124,6 @@ namespace ChargeIT.Controllers {
             return Json(new {
                 message = "The station was successfully deleted.",
             });
-            return RedirectToAction("Index", "ChargeMachines");
         }
 
         [HttpGet]

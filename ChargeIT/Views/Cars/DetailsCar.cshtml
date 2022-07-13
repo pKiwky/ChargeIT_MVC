@@ -1,0 +1,48 @@
+﻿@model CarDetailsViewModel
+
+<div class="modal-content">
+    <h5 class="modal-title">Car details.</h5>
+
+    <form method="POST">
+        <div class="form-group">
+            <label asp-for="CarViewModel.Id" class="form-label">Id</label>
+            <span class="form-control form-input" asp-for="City">@Model.CarViewModel.Id</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CarViewModel.PlateNumber" class="form-label">Plate number</label>
+            <span class="form-control form-input" asp-for="City">@Model.CarViewModel.PlateNumber</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CarViewModel.Owner" class="form-label">Owner</label>
+            <span class="form-control form-input" asp-for="City">@Model.CarViewModel.Owner.Name</span>
+        </div>
+
+        @if (Model.ChargeMachineBookingViewModels.Count > 0){
+            <table class="table table-hover table-light">
+                <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Code</th>
+                <th scope="col">Start time</th>
+                <th scope="col">End time</th>
+                <th scope="col"></th>
+                </thead>
+                <tbody>
+                @foreach (var booking in Model.ChargeMachineBookingViewModels){
+                    <tr class='@(DateTime.Now >= booking.BookingViewModel.Date && DateTime.Now <= booking.BookingViewModel.Date.Value.AddHours(1) ? "table-success" : "")'>
+                        <td> @(Model.ChargeMachineBookingViewModels.IndexOf(booking) + 1)</td>
+                        <td>@booking.BookingViewModel.Code</td>
+                        <td>@booking.BookingViewModel.Date</td>
+                        <td>@booking.BookingViewModel.Date.Value.AddHours(1)</td>
+                        <td>
+                            <button type="button" class="btn btn-danger add-button action">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </form>
+</div>

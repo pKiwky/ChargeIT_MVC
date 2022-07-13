@@ -1,0 +1,111 @@
+﻿@model BookingViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <h3 class="page-title">Create new booking.</h3>
+
+    <form method="POST">
+        <div class="form-group">
+            <label asp-for="ChargeMachineId" class="control-label text-dark form-label">Charge station</label>
+            <div class="col-md-12">
+                <select id="charge-machine-dropdown" asp-for="ChargeMachineId" onchange="GetAvailableIntervals()" required
+                        asp-items="@(new SelectList(Model.ChargeMachines, nameof(DropdownViewModel.Id), nameof(DropdownViewModel.Value)))" class="form-control form-input">
+                    <option value="">Select a charge machine</option>
+                </select>
+                <span asp-validation-for="ChargeMachineId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CarId" class="control-label text-dark form-label">Car</label>
+            <div class="col-md-12">
+                <select id="car-dropdown" asp-for="CarId" onchange="GetAvailableIntervals()" required
+                        asp-items="@(new SelectList(Model.Cars, nameof(DropdownViewModel.Id), nameof(DropdownViewModel.Value)))" class="form-control form-input">
+                    <option value=""> Select your car </option>
+                </select >
+                <span asp-validation-for="CarId" class="text-danger"></span>
+            </div >
+        </div >
+        <div class="form-group">
+            <label asp-for="Date" class="control-label text-dark form-label">Date</label>
+            <div class="col-md-12">
+                <input type="date" id="date-dropdown" onchange="GetAvailableIntervals()" asp-for="Date" class="form-control form-input"
+                       min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+                </input >
+                <span asp-validation-for="Date" class="text-danger"></span >
+            </div >
+        </div >
+        <div class="form-group" id="hours-dropdown" style="display: none;">
+            <label asp-for="IntervalHour" class="control-label text-dark form-label">Hour interval</label>
+            <div class="col-md-12">
+                <select id="available-hours-dropdown" asp-for="IntervalHour" class="form-control form-input" required>
+                    <option value="">-1</option>
+                </select >
+            </div >
+            <span asp-validation-for="IntervalHour" class="text-danger"></span >
+        </div >
+
+        <button
+            type="button"
+            onclick="sendPostRequest('Bookings', 'AddBooking')"
+            id="save-button"
+            class="btn btn-success action-station-button">
+            Save
+        </button>
+    </form>
+</div >
+</body >
+</html >
+
+<script>
+    $(document).ready(function() {
+        GetAvailableIntervals();
+    });
+
+    function GetAvailableIntervals() {
+        var hoursDropdown = document.getElementById("hours-dropdown");
+        var saveButton =   document.getElementById("save-button") 
+        var date = document.getElementById("date-dropdown");
+        var chageMachineId = document.getElementById('charge-machine-dropdown');
+        
+        if (date.value.length == 0) {
+            hoursDropdown.style.display = "none";
+            saveButton.style.display = "none";
+            return;
+        }
+        
+        if (chageMachineId.value === null || chageMachineId.value === 0 ) {
+            return;
+        }
+        
+        $.ajax({
+           url: `/Bookings/GetAvailableIntervals?chargemachineid=${chageMachineId.value}&date=${date.value}`,
+           type: "GET",
+           success: function (data) { 
+               hoursDropdown.style.display = "block";
+               saveButton.style.display = "block";
+               
+               var parent = document.getElementById("available-hours-dropdown");
+               parent.innerHTML = "";
+               
+               for (var i = 0; i < data.length; i++) {
+                   var option = document.createElement("option");
+
+                   option.value = data[i];
+                   option.innerText = get24HourFormat(data[i]) + " - " + get24HourFormat(data[i] + 1)
+                   
+                   parent.append(option);
+               }
+           } 
+        });
+    }
+    
+    function get24HourFormat(hour) {
+        return ('0' + hour + ":00").slice(-5);
+    }
+</script>

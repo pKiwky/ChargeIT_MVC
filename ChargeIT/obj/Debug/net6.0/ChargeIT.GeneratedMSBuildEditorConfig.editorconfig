@@ -8,73 +8,85 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ChargeIT
 build_property.RootNamespace = ChargeIT
-build_property.ProjectDir = C:\Users\Picua\Desktop\Projects\ChargeIT\ChargeIT\
+build_property.ProjectDir = C:\Users\Alex\Desktop\ChargeIT\ChargeIT\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Picua\Desktop\Projects\ChargeIT\ChargeIT
+build_property.MSBuildProjectDirectory = C:\Users\Alex\Desktop\ChargeIT\ChargeIT
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Cars/AddCar.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Bookings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Cars/AddCar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xBZGRDYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Cars/Index.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Cars/DetailsCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xEZXRhaWxzQ2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Cars/EditCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xFZGl0Q2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Cars/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/ChargeMachines/AddStation.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/ChargeMachines/AddStation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmdlTWFjaGluZXNcQWRkU3RhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/ChargeMachines/DetailsStation.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/ChargeMachines/DetailsStation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmdlTWFjaGluZXNcRGV0YWlsc1N0YXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/ChargeMachines/EditStation.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/ChargeMachines/EditStation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmdlTWFjaGluZXNcRWRpdFN0YXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/ChargeMachines/Index.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/ChargeMachines/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcmdlTWFjaGluZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Home/Index.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Home/Privacy.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Shared/Error.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Shared/_ModalPartial.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Shared/_ModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Nb2RhbFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/_ViewImports.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/_ViewStart.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Picua/Desktop/Projects/ChargeIT/ChargeIT/Views/Shared/_Layout.cshtml]
+[C:/Users/Alex/Desktop/ChargeIT/ChargeIT/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-76o21nmw9t

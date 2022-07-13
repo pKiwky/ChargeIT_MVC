@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Picua\\Desktop\\Projects\\ChargeIT\\ChargeIT\\ChargeIT.csproj": {}
+    "C:\\Users\\Alex\\Desktop\\ChargeIT\\ChargeIT\\ChargeIT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Picua\\Desktop\\Projects\\ChargeIT\\ChargeIT\\ChargeIT.csproj": {
+    "C:\\Users\\Alex\\Desktop\\ChargeIT\\ChargeIT\\ChargeIT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Picua\\Desktop\\Projects\\ChargeIT\\ChargeIT\\ChargeIT.csproj",
+        "projectUniqueName": "C:\\Users\\Alex\\Desktop\\ChargeIT\\ChargeIT\\ChargeIT.csproj",
         "projectName": "ChargeIT",
-        "projectPath": "C:\\Users\\Picua\\Desktop\\Projects\\ChargeIT\\ChargeIT\\ChargeIT.csproj",
-        "packagesPath": "C:\\Users\\Picua\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Picua\\Desktop\\Projects\\ChargeIT\\ChargeIT\\obj\\",
+        "projectPath": "C:\\Users\\Alex\\Desktop\\ChargeIT\\ChargeIT\\ChargeIT.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alex\\Desktop\\ChargeIT\\ChargeIT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Picua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,6 +67,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[6.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
             }
           },
           "imports": [

@@ -7,6 +7,8 @@ namespace ChargeIT.Models {
 
         [MaxLength(10)]
         public string PlateNumber { get; set; }
+
+        public CarOwnerViewModel? Owner { get; set; }
     }
 
 }

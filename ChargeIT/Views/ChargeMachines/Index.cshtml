@@ -13,9 +13,9 @@
 
     <div class="card">
         <div class="card-body">
-            <a class="add-item" onclick="openModal('ChargeMachines', 'GetAddStationModal')">
+            <button class="add-item" onclick="openModal('ChargeMachines', 'GetAddStationModal')">
                 <img class="card-image" src="assets/add_item.png">
-            </a>
+            </button>
         </div>
     </div>
 
@@ -25,18 +25,18 @@
                 <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xYPHmcJcGH46-yDKw1oIna6CqPczD2O_OA&usqp=CAU">
                 <h5 class="card-title">
                     @chargeMachine.City, @chargeMachine.Street @(chargeMachine.Number != 0 ? @chargeMachine.Number : "")
-                    <a type="button" class="btn btn-danger add-button action"
+                    <button type="button" class="btn btn-danger add-button action"
                        onclick="sendDeleteRequest('ChargeMachines', 'DeleteStation', { id: @chargeMachine.Id })">
                         <i class="fa-solid fa-circle-xmark"></i>
-                    </a>
-                    <a type="button" class="btn btn-danger add-button action"
+                    </button>
+                    <button type="button" class="btn btn-danger add-button action"
                        onclick="openModal('ChargeMachines', 'GetEditStationModal', { id: @chargeMachine.Id })">
                         <i class="fa-solid fa-file-pen"></i>
-                    </a>
-                    <a type="button" class="btn btn-danger add-button action"
+                    </button>
+                    <button type="button" class="btn btn-danger add-button action"
                        onclick="openModal('ChargeMachines', 'DetailsStation', { id: @chargeMachine.Id })">
                         <i class="fa-solid fa-circle-info"></i>
-                    </a>
+                    </button>
                 </h5>
                 <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>

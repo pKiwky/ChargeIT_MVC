@@ -30,6 +30,9 @@ namespace ChargeIT.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ChargeMachineId")
                         .HasColumnType("int");
 
@@ -56,6 +59,8 @@ namespace ChargeIT.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CarId");
 
                     b.HasIndex("ChargeMachineId");
 
@@ -386,11 +391,19 @@ namespace ChargeIT.Migrations
 
             modelBuilder.Entity("ChargeIT.Data.Entities.BookingEntity", b =>
                 {
+                    b.HasOne("ChargeIT.Data.Entities.CarEntity", "Car")
+                        .WithMany()
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ChargeIT.Data.Entities.ChargeMachineEntity", "ChargeMachine")
                         .WithMany()
                         .HasForeignKey("ChargeMachineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Car");
 
                     b.Navigation("ChargeMachine");
                 });

@@ -1,6 +1,6 @@
-﻿* Create Cars tab in the navigation bar
-* Get and show the available cars from the system
-* Add the functionality to create a new car 
+﻿Functiile de delete sters linia cu totul.
+Sa fac sa modifice IsDeleted in true.
+Daca o statie e folosita merge stearsa (DELETE ON CASCADE). Sa anunt cu un mesaj.
 
 * Title for each page
 * Edit/Details/Delete Car

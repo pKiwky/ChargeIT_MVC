@@ -1,0 +1,35 @@
+﻿@model AddCarViewModel
+
+<div class="modal-content">
+    <h5 class="modal-title">Edit station.</h5>
+
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control form-input" asp-for="Id" hidden required>
+        </div>
+        <div class="form-group">
+            <label asp-for="PlateNumber" class="form-label">Plate number</label>
+            <input type="text" class="form-control form-input" asp-for="PlateNumber" required>
+            <span asp-validation-for="PlateNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="OwnerId" class="form-label">Owner</label>
+            <div class="col-md-12">
+                <select class="form-control form-input"
+                        asp-for="OwnerId"
+                        asp-items="@(new SelectList(Model.Owners, nameof(DropdownViewModel.Id), nameof(DropdownViewModel.Value)))" required>
+                    <option value="">Select car owner</option>
+                </select>
+                <span asp-validation-for="OwnerId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button
+            type="button"
+            onclick="sendPostRequest('Cars', 'EditCar')"
+            class="btn btn-success action-station-button">
+            Save
+        </button>
+    </form>
+</div>

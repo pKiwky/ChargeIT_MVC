@@ -1,4 +1,6 @@
-﻿@model ChargeMachineViewModel
+﻿@using Newtonsoft.Json
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ChargeMachineViewModel
 
 <div class="modal-content">
     <h5 class="modal-title">Station details.</h5>
@@ -33,4 +35,38 @@
             <span class="form-control form-input" asp-for="City">@Model.Longitude</span>
         </div>
     </form>
+    
+    <div id="googleMap" style="height:400px;width:100%;" onload="showStationOnMap()"></div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        showStationOnMap();
+     });
+
+    function showStationOnMap() {
+        var station = @Html.Raw(JsonConvert.SerializeObject(this.Model));
+
+        var lat = station.Latitude;
+        var long = station.Longitude;
+        var code = station.Code;
+        
+        var myCenter = new google.maps.LatLng(lat, long);
+        var mapProp = { center: myCenter, zoom: 12, scrollwheel: false, draggable: true, mapTypeId: google.maps.MapTypeId.ROADMAP };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({ position: myCenter });
+        
+        var marker = new google.maps.Marker({
+            'position': new google.maps.LatLng(lat, long),
+            'map': map,
+            'title': code
+        });
+        
+        var info = showStationMapInfoWindow(station);
+        google.maps.event.addListener(marker, 'click', function () {    
+            info.open(map, marker);    
+        });  
+        
+        marker.setMap(map);
+    }
+</script>

@@ -7,6 +7,9 @@
 
         public int ChargeMachineId { get; set; }
         public ChargeMachineEntity ChargeMachine { get; set; }
+        
+        public int CarId { get; set; }
+        public CarEntity Car { get; set; }
     }
 
 }
