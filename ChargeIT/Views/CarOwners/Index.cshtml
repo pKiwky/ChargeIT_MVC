@@ -1,0 +1,49 @@
+﻿@model List<CarOwnerViewModel> 
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<div>
+    <h3 class="page-title">Car owners.</h3>
+
+    <div class="card">
+        <div class="card-body">
+            <a class="add-item" onclick="openModal('CarOwners', 'GetAddCarOwnerModal')">
+                <img class="card-image" src="assets/add_item.png">
+            </a>
+        </div>
+    </div>
+
+    @foreach (var carOwner in Model){
+        <div class="card">
+            <div class="card-body">
+                <img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRr0YlatAy-hrNCQjzZ7fqDzNiXt7HGmzVaA&usqp=CAU">
+                <h5 class="card-title">
+                    @carOwner.Name (@carOwner.Email)
+                    @* <button type="button" class="btn btn-danger add-button action" *@
+                    @*    onclick="sendDeleteRequest('Cars', 'DeleteCar', { id: 0 })"> *@
+                    @*     <i class="fa-solid fa-circle-xmark"></i> *@
+                    @* </button> *@
+                    @* <button type="button" class="btn btn-danger add-button action" *@
+                    @*         onclick="openModal('Cars', 'GetEditCarModal', { id: @carOwner.Id })"> *@
+                    @*     <i class="fa-solid fa-file-pen"></i> *@
+                    @* </button> *@
+                    <button type="button" class="btn btn-danger add-button action"
+                            onclick="openModal('CarOwners', 'CarOwnerDetails', { id: @carOwner.Id })">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                </h5>
+                @* <p class="card-text"></p> *@
+            </div>
+        </div>
+    }
+
+    <partial name="_ModalPartial"/>
+</div>
+</body>
+</html>

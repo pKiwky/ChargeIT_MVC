@@ -1,4 +1,6 @@
-﻿@model BookingViewModel
+﻿@using Newtonsoft.Json
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BookingViewModel
 
 <!DOCTYPE html>
 
@@ -56,8 +58,10 @@
             id="save-button"
             class="btn btn-success action-station-button">
             Save
-        </button>
+        </button><br/>
     </form>
+
+    <div id="googleMap" style="height:400px;width:100%;"></div>
 </div >
 </body >
 </html >
@@ -72,6 +76,27 @@
         var saveButton =   document.getElementById("save-button") 
         var date = document.getElementById("date-dropdown");
         var chageMachineId = document.getElementById('charge-machine-dropdown');
+        var map = document.getElementById('googleMap');
+        
+        $.ajax({
+            url: `/ChargeMachines/GetStation?chargemachineid=${chageMachineId.value}`,
+            type: "GET",
+            success: function (data) { 
+                // Proasta metoda de verificare. Trebuia sa verific codul api-ului.
+                if (data.code) {
+                    map.style.display = "block";
+                    showStationOnMap({
+                        Latitude: data.latitude,
+                        Longitude: data.longitude,
+                        Code: data.code
+                    });
+                }
+                else
+                    map.style.display = "none";
+            },
+            error: function (data) {
+            }
+        });
         
         if (date.value.length == 0) {
             hoursDropdown.style.display = "none";

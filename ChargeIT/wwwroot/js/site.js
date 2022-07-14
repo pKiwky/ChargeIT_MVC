@@ -87,6 +87,36 @@ function sendDeleteRequest(controller, page, parameters) {
     });
 }
 
+function showStationOnMap(station) {
+    var lat = station.Latitude;
+    var long = station.Longitude;
+    var code = station.Code;
+
+    var myCenter = new google.maps.LatLng(lat, long);
+    var mapProp = {
+        center: myCenter,
+        zoom: 12,
+        scrollwheel: false,
+        draggable: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var marker = new google.maps.Marker({position: myCenter});
+
+    var marker = new google.maps.Marker({
+        'position': new google.maps.LatLng(lat, long),
+        'map': map,
+        'title': code
+    });
+
+    var info = showStationMapInfoWindow(station);
+    google.maps.event.addListener(marker, 'click', function () {
+        info.open(map, marker);
+    });
+
+    marker.setMap(map);
+}
+
 function showStationMapInfoWindow(station) {
     var infowIndow = new google.maps.InfoWindow({
         content:

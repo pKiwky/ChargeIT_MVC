@@ -148,6 +148,27 @@ namespace ChargeIT.Controllers {
             });
         }
 
+        [HttpGet]
+        public IActionResult GetStation(int chargeMachineId) {
+            var chargeMachineEntity = _applicationDbContext.ChargeMachines
+                .FirstOrDefault(cm => cm.Id == chargeMachineId && cm.IsDeleted == false);
+
+            if (chargeMachineEntity == null) {
+                return Json(new {
+                    error = "This station it is not valid."
+                });
+            }
+
+            return Ok(new ChargeMachineViewModel() {
+                Id = chargeMachineEntity.Id,
+                Code = chargeMachineEntity.Code,
+                City = chargeMachineEntity.City,
+                Latitude = chargeMachineEntity.Latitude,
+                Longitude = chargeMachineEntity.Longitude,
+                Number = chargeMachineEntity.Number,
+                Street = chargeMachineEntity.Street
+            });
+        }
     }
 
 }

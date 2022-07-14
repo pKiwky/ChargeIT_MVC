@@ -785,3 +785,4 @@ C:\Users\Alex\Desktop\ChargeIT\ChargeIT\obj\Debug\net6.0\ChargeIT.pdb
 C:\Users\Alex\Desktop\ChargeIT\ChargeIT\obj\Debug\net6.0\ChargeIT.genruntimeconfig.cache
 C:\Users\Alex\Desktop\ChargeIT\ChargeIT\obj\Debug\net6.0\ref\ChargeIT.dll
 C:\Users\Alex\Desktop\ChargeIT\ChargeIT\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Picua\Desktop\Projects\ChargeIT\ChargeIT\bin\Debug\net6.0\Newtonsoft.Json.dll

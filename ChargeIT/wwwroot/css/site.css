@@ -56,9 +56,14 @@ body {
     padding: 0 5px 0 5px;
 }
 
-.action:hover {
-    background-color: indianred;
+.action:hover, .action:focus {
+    background-color: transparent;
+    color: #363a36;
     opacity: 0.75;
+}
+
+.btn{
+    box-shadow: none !important
 }
 
 .modal-title {
@@ -83,3 +88,4 @@ body {
     padding: 7.5px;
     margin-bottom: 7.5px;
 }
+

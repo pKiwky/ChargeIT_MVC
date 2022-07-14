@@ -14,7 +14,7 @@ namespace ChargeIT.Controllers {
         }
 
         public IActionResult Index() {
-            List<CarViewModel> carViewModels = _applicationDbContext.Cars
+            var carViewModels = _applicationDbContext.Cars
                 .Where(c => c.IsDeleted == false)
                 .Select(c =>
                     new CarViewModel() {
@@ -32,9 +32,9 @@ namespace ChargeIT.Controllers {
 
             addCarViewModel.Owners = _applicationDbContext.CarOwners
                 .Select(co => new DropdownViewModel() {
-                    Id = co.Id,
-                    Value = co.Name
-                }
+                        Id = co.Id,
+                        Value = co.Name
+                    }
                 ).ToList();
 
             return PartialView("AddCar", addCarViewModel);
@@ -42,13 +42,13 @@ namespace ChargeIT.Controllers {
 
         [HttpPost]
         public IActionResult AddCar(AddCarViewModel addCarViewModel) {
-            if (ModelState.IsValid == false){
+            if (ModelState.IsValid == false) {
                 addCarViewModel.Owners = _applicationDbContext.CarOwners
                     .Select(co => new DropdownViewModel() {
-                        Id = co.Id,
-                        Value = co.Name
-                    }
-                ).ToList();
+                            Id = co.Id,
+                            Value = co.Name
+                        }
+                    ).ToList();
 
                 return PartialView("AddCar", addCarViewModel);
             }
@@ -71,7 +71,7 @@ namespace ChargeIT.Controllers {
             var carEntity = _applicationDbContext.Cars
                 .FirstOrDefault(c => c.Id == id && c.IsDeleted == false);
 
-            if (carEntity == null){
+            if (carEntity == null) {
                 return new EmptyResult();
             }
 
@@ -79,27 +79,27 @@ namespace ChargeIT.Controllers {
                 PlateNumber = carEntity.PlateNumber,
                 OwnerId = carEntity.OwnerId
             };
-                
+
             carViewModel.Owners = _applicationDbContext.CarOwners
                 .Select(co => new DropdownViewModel() {
-                    Id = co.Id,
-                    Value = co.Name
-                }
-            ).ToList();
-            
+                        Id = co.Id,
+                        Value = co.Name
+                    }
+                ).ToList();
+
             return PartialView("EditCar", carViewModel);
         }
-        
+
         [HttpPost]
         public IActionResult EditCar(AddCarViewModel addCarViewModel) {
             if (ModelState.IsValid == false) {
                 addCarViewModel.Owners = _applicationDbContext.CarOwners
                     .Select(co => new DropdownViewModel() {
-                        Id = co.Id,
-                        Value = co.Name
-                    }
-                ).ToList();
-                
+                            Id = co.Id,
+                            Value = co.Name
+                        }
+                    ).ToList();
+
                 return View("EditCar", addCarViewModel);
             }
 
@@ -128,7 +128,7 @@ namespace ChargeIT.Controllers {
             var carEntity = _applicationDbContext.Cars
                 .FirstOrDefault(c => c.Id == id && c.IsDeleted == false);
 
-            if (carEntity == null){
+            if (carEntity == null) {
                 return Json(new {
                     error = "This car was already deleted.",
                 });
@@ -143,7 +143,7 @@ namespace ChargeIT.Controllers {
 
             return RedirectToAction("Index", "Cars");
         }
-        
+
         [HttpGet]
         public IActionResult CarDetails(int id) {
             var carEntity = _applicationDbContext.Cars
@@ -167,7 +167,7 @@ namespace ChargeIT.Controllers {
 
             var chargeMachineViewModels = _applicationDbContext.Bookings
                 .Include(b => b.ChargeMachine)
-                .Where(b => b.CarId == carViewModel.Id)
+                .Where(b => b.ChargeMachineId == id)
                 .Select(b => new ChargeMachineBookingViewModel() {
                     BookingViewModel = new BookingViewModel() {
                         Date = b.StartTime,

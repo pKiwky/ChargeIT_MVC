@@ -1,0 +1,38 @@
+﻿@model CarOwnerDetailsViewModel
+
+<div class="modal-content">
+    <h5 class="modal-title">Car owner details.</h5>
+
+    <form method="POST">
+        <div class="form-group">
+            <label asp-for="CarOwnerViewModel.Id" class="form-label">Id</label>
+            <span class="form-control form-input" asp-for="City">@Model.CarOwnerViewModel.Id</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CarOwnerViewModel.Name" class="form-label">Plate number</label>
+            <span class="form-control form-input" asp-for="City">@Model.CarOwnerViewModel.Name</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CarOwnerViewModel.Email" class="form-label">Owner</label>
+            <span class="form-control form-input" asp-for="City">@Model.CarOwnerViewModel.Email</span>
+        </div>
+
+        @if (Model.CarViewModels != null && Model.CarViewModels.Count > 0) {
+            <table class="table table-hover table-light">
+                <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Plate number</th>
+                </thead>
+                <tbody>
+                @foreach (var car in Model.CarViewModels) {
+                    <tr>
+                        <td>@(Model.CarViewModels.IndexOf(car) + 1)</td>
+                        <td>@car.PlateNumber</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </form>
+</div>
